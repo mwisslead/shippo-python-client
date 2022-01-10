@@ -11,17 +11,17 @@ with open(os.path.join(here, "shippo", "version.py"), encoding="utf-8") as f:
     exec(f.read(), version_contents)
 
 setup(
-    name='shippo',
+    name='shippo-mwisslead',
     version=version_contents['VERSION'],
-    description='Shipping API Python library (USPS, FedEx, UPS and more)',
+    description='Shipping API Python library (USPS, FedEx, UPS and more) forked to remove requirements restrictions',
     author='Shippo',
     author_email='support@goshippo.com',
     url='https://goshippo.com/',
     packages=['shippo', 'shippo.test', 'shippo.test.integration'],
-    package_data={'shippo': ['../VERSION']},
+    package_data={'shippo': []},
     install_requires=[
         'requests',
-        'simplejson >= 3.16.0, <= 3.17.2',
+        'simplejson >= 3.16.0',
     ],
     test_suite='shippo.test.all',
     tests_require=['unittest2', 'mock', 'vcrpy'],
